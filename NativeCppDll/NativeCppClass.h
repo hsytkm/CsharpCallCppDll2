@@ -10,6 +10,7 @@ public:
 	NativeCppClass(int x);
 	~NativeCppClass() {}
 
+	void SetParam(int);
 	int GetParam() const { return param * 10; }
 	std::string GetString(std::string) const;
 };

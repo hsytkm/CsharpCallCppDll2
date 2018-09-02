@@ -32,8 +32,12 @@ namespace MixedLanguage
             // ネイティブC++をラッパしたC++/CLIのDLLコール
             using (var nat = new NativeWrapper(10, 2))
             {
+                var x1 = nat.GetInt();
+                nat.SetInt(1234);
+                var x2 = nat.GetInt();
+
                 Console.WriteLine($"  From NativeC++");
-                Console.WriteLine($"  Value={nat.GetInt()}");
+                Console.WriteLine($"  Value={x1} → {x2}");
                 Console.WriteLine($"  String={nat.GetStringWrap("★")}");
             }
             Console.WriteLine($"--------------------------------------------");
