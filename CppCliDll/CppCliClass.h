@@ -1,10 +1,11 @@
 #pragma once
+#include "Person.h"
 
 namespace CppCliDll {
 	public ref class CppCliClass
 	{
 	private:
-
+		Person^ person;
 
 	public:
 		CppCliClass();			// コンストラクタ
@@ -15,6 +16,10 @@ namespace CppCliDll {
 		int Multi(int x, int y);
 		System::String^ ToUpper(System::String^ lower);
 
+		// 自作クラス操作
+		System::String^ GetPersonName() { return person->GetName(); }
+		int GetPersonAge() { return person->GetAge(); }
+		Person^ GetPersonClass() { return person; }
 
 	};
 }

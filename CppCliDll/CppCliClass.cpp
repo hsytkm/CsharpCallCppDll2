@@ -8,6 +8,8 @@ using namespace CppCliDll;
 
 CppCliClass::CppCliClass()
 {
+	this->person = gcnew Person("Ken", 20);
+
 	std::cout << "CppCliClass: Call Constractor" << std::endl;
 }
 
