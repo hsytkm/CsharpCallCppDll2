@@ -7,8 +7,9 @@ private:
 
 public:
 	NativeCppClass() { param = 1; }
-	NativeCppClass(int x) : param(x) {}
+	NativeCppClass(int x);
 	~NativeCppClass() {}
 
 	int GetParam() const { return param * 10; }
+	std::string GetString() const;
 };
