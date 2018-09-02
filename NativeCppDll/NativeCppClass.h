@@ -11,5 +11,5 @@ public:
 	~NativeCppClass() {}
 
 	int GetParam() const { return param * 10; }
-	std::string GetString() const;
+	std::string GetString(std::string) const;
 };

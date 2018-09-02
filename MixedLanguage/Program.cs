@@ -35,7 +35,7 @@ namespace MixedLanguage
                 var x = nat.GetInt();
                 Console.WriteLine($"  From NativeC++");
                 Console.WriteLine($"  Value={x}");
-                Console.WriteLine($"  String={nat.GetStringWrap()}");
+                Console.WriteLine($"  String={nat.GetStringWrap("★")}");
             }
             Console.WriteLine($"--------------------------------------------");
 
