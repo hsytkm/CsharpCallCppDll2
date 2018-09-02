@@ -36,9 +36,18 @@ namespace MixedLanguage
                 nat.SetInt(1234);
                 var x2 = nat.GetInt();
 
+                //var pet = nat.GetPetClass();
+                var petType = nat.GetPetType();
+                var petTypeStr = Enum.GetName(typeof(PetTypeWrap), petType);
+                //var x = PetTypeWrap.WDog;   enumの定義名が取れない
+                var petName = nat.GetPetName();
+                var petAge = nat.GetPetAge();
+
                 Console.WriteLine($"  From NativeC++");
                 Console.WriteLine($"  Value={x1} → {x2}");
                 Console.WriteLine($"  String={nat.GetStringWrap("★")}");
+
+                Console.WriteLine($"  Pet: {petTypeStr} / {petName} / {petAge}");
             }
             Console.WriteLine($"--------------------------------------------");
 
