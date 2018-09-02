@@ -13,10 +13,20 @@ namespace MixedLanguage
         {
             Console.WriteLine($"C# Main");
 
-            using (var dll = new CliDll(10, 2))
+            // C++/CLIのみ
+            using (var cli = new CppCliClass())
             {
-                var x = dll.GetInt();
-                Console.WriteLine($"FromC++/CLI  Value={x}");
+                var mul = cli.Multi(2, 3);      // 掛け算の取得
+                var str = cli.ToUpper("abCde"); // 大文字の取得
+
+                Console.WriteLine($"From C++/CLI: {mul} {str}");
+            }
+
+            // C++のCLIラッパ
+            using (var nat = new NativeWrapper(10, 2))
+            {
+                var x = nat.GetInt();
+                Console.WriteLine($"From NativeC++: Value={x}");
             }
 
             Console.ReadKey();
