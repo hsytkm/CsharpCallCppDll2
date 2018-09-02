@@ -14,7 +14,7 @@ namespace MixedLanguage
             Console.WriteLine($"C# Main");
             Console.WriteLine($"--------------------------------------------");
 
-            // C++/CLIのみ
+            // 純粋C++/CLIのDLLコール
             using (var cli = new CppCliClass())
             {
                 var mul = cli.Multi(2, 3);      // 掛け算の取得
@@ -29,12 +29,11 @@ namespace MixedLanguage
             }
             Console.WriteLine($"--------------------------------------------");
 
-            // C++のCLIラッパ
+            // ネイティブC++をラッパしたC++/CLIのDLLコール
             using (var nat = new NativeWrapper(10, 2))
             {
-                var x = nat.GetInt();
                 Console.WriteLine($"  From NativeC++");
-                Console.WriteLine($"  Value={x}");
+                Console.WriteLine($"  Value={nat.GetInt()}");
                 Console.WriteLine($"  String={nat.GetStringWrap("★")}");
             }
             Console.WriteLine($"--------------------------------------------");
