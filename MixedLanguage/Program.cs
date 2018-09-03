@@ -14,7 +14,7 @@ namespace MixedLanguage
             Console.WriteLine($"C# Main");
             Console.WriteLine($"--------------------------------------------");
 
-            // 純粋C++/CLIのDLLコール
+            Console.WriteLine($"純粋C++/CLIのDLLコール");
             using (var cli = new CppCliClass())
             {
                 var mul = cli.Multi(2, 3);      // 掛け算の取得
@@ -29,7 +29,7 @@ namespace MixedLanguage
             }
             Console.WriteLine($"--------------------------------------------");
 
-            // ネイティブC++をラッパしたC++/CLIのDLLコール
+            Console.WriteLine($"ネイティブC++をラッパしたC++/CLIのDLLコール");
             using (var nat = new NativeWrapper(10, 2))
             {
                 var x1 = nat.GetInt();
@@ -38,8 +38,7 @@ namespace MixedLanguage
 
                 //var pet = nat.GetPetClass();
                 var petType = nat.GetPetType();
-                var petTypeStr = Enum.GetName(typeof(PetTypeWrap), petType);
-                //var x = PetTypeWrap.WDog;   enumの定義名が取れない
+                var petTypeStr = Enum.GetName(typeof(NativeWrapper.PetTypeWrap), petType);
                 var petName = nat.GetPetName();
                 var petAge = nat.GetPetAge();
 
