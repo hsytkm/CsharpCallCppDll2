@@ -15,7 +15,7 @@ namespace MixedLanguage
 
             using (var nat = new PetWrapper())
             {
-                //var pet = nat.GetPetClass();      // クラス取得不可
+                //var pet = nat.GetPetClass();  // クラス取得不可(アクセスレベルでビルド通らない)
                 var petType = nat.GetPetType();
                 var petTypeStr = Enum.GetName(typeof(PetWrapper.PetTypeWrap), petType);
                 var petName = nat.GetPetName();
@@ -24,21 +24,8 @@ namespace MixedLanguage
             }
             Console.WriteLine(Environment.NewLine);
 
-            using (var nat = new NativeWrapper(10, 2))
+            using (var nat = new BinReaderWrapper())
             {
-                Console.WriteLine($"From NativeC++");
-
-                // Pet
-                Console.WriteLine($" *Pet*");
-                //var pet = nat.GetPetClass();
-                var petType = nat.GetPetType();
-                var petTypeStr = Enum.GetName(typeof(NativeWrapper.PetTypeWrap), petType);
-                var petName = nat.GetPetName();
-                var petAge = nat.GetPetAge();
-                Console.WriteLine($"  Pet: {petTypeStr} / {petName} / {petAge}");
-
-                // BinReader
-                Console.WriteLine($" *BinReader*");
                 nat.WrapSetFilePath(TestDataPath);          // ファイル設定
                 nat.WrapReadFileBinary();                   // バイナリをDLL内で読み込み
                 var binSize = nat.WrapGetBinarySize();      // DLL内のバイナリサイズを受け取る
