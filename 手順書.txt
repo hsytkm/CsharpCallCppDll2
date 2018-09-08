@@ -1,0 +1,110 @@
+■NativeC++プロジェクト
+　・新しいプロジェクト　⇒　VisualC++　⇒　Windowsデスクトップ　⇒　スタティックライブラリ
+　・ヘッダとソースに TestClass.h / .cpp を追加する
+
+	TestClass.h
+		#pragma once
+		class TestClass {
+		private:
+			int x;
+		public:
+			TestClass();
+			~TestClass() {}
+		};
+
+	TestClass.cpp
+		#include "stdafx.h"
+		#include <iostream>
+		#include "TestClass.h"
+		TestClass::TestClass(){}
+
+
+■C++/CLIによるラッパプロジェクト
+　・新しいプロジェクト　⇒　VisualC++　⇒　CLR　⇒　CLRクラスライブラリ
+　・構成プロパティ　⇒　C/C++　⇒　全般　⇒　追加のインクルードディレクトリ
+　　　⇒　NativeC++のヘッダディレクトリを指定　⇒　$(SolutionDir)[NativeC++のヘッダパス]
+　・参照　⇒　参照の追加　⇒　プロジェクト　⇒　NativeC++のプロジェクトを選択
+　・[プロジェクト名].h / .cpp は削除してOK
+　・ヘッダとソースに WrapClass.h / .cpp を追加する
+
+	WrapClass.h
+		#pragma once
+		#include "TestClass.h"
+		namespace WrapProject {
+			public ref class WrapClass
+			{
+			private:
+				TestClass* testClass;
+
+			public:
+				WrapClass();
+				~WrapClass();
+				!WrapClass();
+			};
+		}
+
+	WrapClass.cpp
+		#include "stdafx.h"
+		#include <iostream>
+		#include "WrapClass.h"
+		using namespace System;
+		using namespace WrapClass;
+
+		WrapClass::WrapClass()
+		{
+			testClass = new TestClass();
+		}
+		// デストラクタ(マネージド/アンマネージド両方とも解放)
+		WrapClass::~WrapClass()
+		{
+			// *** 以下でマネージドリソースを解放 ***
+
+			this->!WrapClass();
+		}
+		// ファイナライザ(アンマネージドリソースのみ解放)
+		WrapClass::!WrapClass()
+		{
+			// *** 以下でアンマネージドリソースを解放 ***
+			delete testClass;
+		}
+
+
+
+■DLLをコールするC#プロジェクト
+　・参照　⇒　参照の追加　⇒　プロジェクト　⇒　C++/CLRのプロジェクトを選択
+　・プロパティ　⇒　デバッグ　⇒　ネイティブコードのデバッグを有効にする　⇒　ON
+
+		// C++DLLのテストコード
+		using (var wc = new WrapClass())
+		{
+		    Debug.WriteLine($"{wc.GetData()}");
+		}
+
+
+■DLL内からOpenCVの使用
+　〇NativeC++
+　　・構成プロパティ　⇒　C/C++　⇒　全般　⇒　追加のインクルードディレクトリ
+　　　　$(OpenCv)\cmake_build\install\include
+
+　　・埋め込んだOpenCVコード
+		cv::Mat image = Mat::zeros(100, 100, CV_8UC3);
+		imshow("", image);
+		waitKey(0);
+
+
+　〇C++/CLI
+　　・構成プロパティ　⇒　C/C++　⇒　全般　⇒　追加のインクルードディレクトリ
+　　　　$(OpenCv)\cmake_build\install\include
+
+　　・構成プロパティ　⇒　リンカー　⇒　全般　⇒　追加のライブラリディレクトリ
+　　　　$(OpenCv)\cmake_build\install\x86\vc15\lib
+
+　　・構成プロパティ　⇒　リンカー　⇒　入力　⇒　追加の依存ファイル
+　　　　opencv_world342d.lib
+　　　　opencv_img_hash342d.lib
+
+　　・ビルドイベント　⇒　ビルド後イベント
+　　　　説明： OpenCV DLLのコピー
+　　　　コマンド： xcopy /d /Y "$(OpenCv)\cmake_build\bin\$(IntDir)*.dll" "$(SolutionDir)$(SolutionName)\bin\$(IntDir)"
+
+以上
