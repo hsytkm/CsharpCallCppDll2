@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 
-// C++/CLIラッピング入門 https://qiita.com/Convert314/items/0171811eabd69042e540
 namespace MixedLanguage
 {
     class Program
