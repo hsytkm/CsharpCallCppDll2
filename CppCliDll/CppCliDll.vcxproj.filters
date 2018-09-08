@@ -24,10 +24,7 @@
     <ClInclude Include="NativeWrapper.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="CppCliClass.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Person.h">
+    <ClInclude Include="PetWrapper.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,7 +38,7 @@
     <ClCompile Include="NativeWrapper.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="CppCliClass.cpp">
+    <ClCompile Include="PetWrapper.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

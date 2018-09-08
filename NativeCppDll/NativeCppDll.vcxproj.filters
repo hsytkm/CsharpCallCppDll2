@@ -21,9 +21,6 @@
     <ClInclude Include="targetver.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="NativeCppClass.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Pet.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -36,9 +33,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="dllmain.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="NativeCppClass.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Pet.cpp">
