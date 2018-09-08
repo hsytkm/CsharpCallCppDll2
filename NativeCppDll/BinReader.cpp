@@ -65,7 +65,7 @@ void BinReader::ReadFileBinary() {
 	file.close();  //ファイルを閉じる
 }
 
-// 読み込み済みのバイナリを返す
+// 読み込み済みのバイナリサイズを返す
 int BinReader::GetBinarySize() const {
 
 	return binarySize;
@@ -75,6 +75,5 @@ int BinReader::GetBinarySize() const {
 const char* BinReader::GetBinaryPointer() const {
 
 	if (binaryBuf == nullptr) return nullptr;
-
 	return (const char*)binaryBuf;
 }

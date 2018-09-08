@@ -34,6 +34,14 @@ namespace MixedLanguage
                 // マネージ配列にコピー
                 byte[] managedArray = new byte[binSize];
                 Marshal.Copy(ptr, managedArray, 0, binSize);
+
+                // バイナリのコンソール表示
+                for (int i = 0; i < managedArray.Length; i++)
+                {
+                    Console.Write($"0x{managedArray[i]:x2} ");
+                    if (0 == ((i+1) % 8)) Console.WriteLine();
+                }
+                Console.WriteLine();
             }
 
             Console.ReadKey();
