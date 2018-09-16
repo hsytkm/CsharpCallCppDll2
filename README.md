@@ -1,23 +1,24 @@
 # CsharpCallCppDll2
 
-## ã‚„ã£ãŸã“ã¨
- C#ã‹ã‚‰C++/CLIã‚’ä»‹ã—ã¦ã€C++ã®DLLã‚’ã‚³ãƒ¼ãƒ«ã™ã‚‹
+## ‚â‚Á‚½‚±‚Æ
+ C#‚©‚çC++/CLI‚ð‰î‚µ‚ÄAC++‚ÌDLL‚ðƒR[ƒ‹‚·‚é
 
 
-## C#å´
- ã„ã¤ã‚‚é€šã‚Š new ã§ã€C++/CLLã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œæˆã™ã‚‹
+## C#‘¤
+ ‚¢‚Â‚à’Ê‚è new ‚ÅAC++/CLLƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ðì¬‚·‚é
 
 
-## C++/CLI(DLL)å´
- C++(DLL)ã‚’Wrapã™ã‚‹ã€‚libTooling? / CppSharp?ã‚’ä½¿ã†ã¨è‡ªå‹•ã§ã‚³ãƒ¼ãƒ‰ã‚’ä½œã£ã¦ãã‚Œãã†
+## C++/CLI(DLL)‘¤
+ C++(DLL)‚ðWrap‚·‚é  
+ libTooling? / CppSharp?‚ðŽg‚¤‚ÆŽ©“®‚ÅƒR[ƒh‚ðì‚Á‚Ä‚­‚ê‚»‚¤
 
 
-## C++(DLL)å´
- C++(DLL)ã‚’ã‚´ãƒªã‚´ãƒªæ›¸ã
+## C++(DLL)‘¤
+ C++(DLL)‚ðƒSƒŠƒSƒŠ‘‚­
 
 
-## å‚è€ƒã«ã—ãŸãƒšãƒ¼ã‚¸
-C++/CLIãƒ©ãƒƒãƒ”ãƒ³ã‚°å…¥é–€
-https://qiita.com/Convert314/items/0171811eabd69042e540
+## ŽQl‚É‚µ‚½ƒy[ƒW
+C++/CLIƒ‰ƒbƒsƒ“ƒO“ü–å  
+https://qiita.com/Convert314/items/0171811eabd69042e540  
 
-ä»¥ä¸Š
+ˆÈã
