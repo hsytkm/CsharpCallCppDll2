@@ -1,24 +1,29 @@
-# CsharpCallCppDll2
+# [Obsolete]CsharpCallCppDll2
 
-## ‚â‚Á‚½‚±‚Æ
- C#‚©‚çC++/CLI‚ð‰î‚µ‚ÄAC++‚ÌDLL‚ðƒR[ƒ‹‚·‚é
+## Move to
 
-
-## C#‘¤
- ‚¢‚Â‚à’Ê‚è new ‚ÅAC++/CLLƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ðì¬‚·‚é
+[hsytkm/PInvokeFromCSharp](https://github.com/hsytkm/PInvokeFromCSharp)
 
 
-## C++/CLI(DLL)‘¤
- C++(DLL)‚ðWrap‚·‚é  
- libTooling? / CppSharp?‚ðŽg‚¤‚ÆŽ©“®‚ÅƒR[ƒh‚ðì‚Á‚Ä‚­‚ê‚»‚¤
+## ã‚„ã£ãŸã“ã¨
+ C#ã‹ã‚‰C++/CLIã‚’ä»‹ã—ã¦ã€C++ã®DLLã‚’ã‚³ãƒ¼ãƒ«ã™ã‚‹
 
 
-## C++(DLL)‘¤
- C++(DLL)‚ðƒSƒŠƒSƒŠ‘‚­
+## C#å´
+ ã„ã¤ã‚‚é€šã‚Š new ã§ã€C++/CLLã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œæˆã™ã‚‹
 
 
-## ŽQl‚É‚µ‚½ƒy[ƒW
-C++/CLIƒ‰ƒbƒsƒ“ƒO“ü–å  
+## C++/CLI(DLL)å´
+ C++(DLL)ã‚’Wrapã™ã‚‹  
+ libTooling? / CppSharp?ã‚’ä½¿ã†ã¨è‡ªå‹•ã§ã‚³ãƒ¼ãƒ‰ã‚’ä½œã£ã¦ãã‚Œãã†
+
+
+## C++(DLL)å´
+ C++(DLL)ã‚’ã‚´ãƒªã‚´ãƒªæ›¸ã
+
+
+## å‚è€ƒã«ã—ãŸãƒšãƒ¼ã‚¸
+C++/CLIãƒ©ãƒƒãƒ”ãƒ³ã‚°å…¥é–€  
 https://qiita.com/Convert314/items/0171811eabd69042e540  
 
-ˆÈã
+ä»¥ä¸Š
