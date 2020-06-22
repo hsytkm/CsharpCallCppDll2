@@ -1,9 +1,4 @@
-# [Obsolete]CsharpCallCppDll2
-
-## Move to
-
-[hsytkm/PInvokeFromCSharp](https://github.com/hsytkm/PInvokeFromCSharp)
-
+# CsharpCallCppDll2
 
 ## やったこと
  C#からC++/CLIを介して、C++のDLLをコールする
